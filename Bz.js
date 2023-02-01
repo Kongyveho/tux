@@ -6,21 +6,13 @@
 
 *******************************
 [rewrite_local]
-^http[s]?:\/\/bzpp2.iwzbz.com\/api\/v1.1\/user\/getpwnewios_v.+$ url script-response-body https://github.com/Kongyveho/tux/blob/main/Bz.js
+^http[s]?:\/\/bzpp2.iwzbz.com\/api\/v1.1\/user\/  url script-response-body https://github.com/Kongyveho/tux/blob/main/Bz.js
 [mitm] 
-hostname = *.iwzbz.*
-*******************************
-Surge
-
-[Script]
-^http[s]?:\/\/bzpp2.iwzbz.com\/api\/v1.1\/user\/getpwnewios_v.+$ requires-body=1,max-size=0,script-path=iwzbz.js
-
-[MITM]
-hostname = *.iwzbz.*
+hostname = bzpp2.iwzbz.com
 
 *******************************/
-var obj = JSON.parse($response.body);
-    obj.vipLevel=  3;
+var body=$response['body'];
+obj.vipLevel=  3;
 obj.expires=  "2025;
 obj.vipTipsType=  0;
-    $done({body: JSON.stringify(obj)});
+   $done({'body':body});
