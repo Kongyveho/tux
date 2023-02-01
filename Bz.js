@@ -1,14 +1,12 @@
 *******************************
-  公众号:木木IOS分享
-关注了解更多新科技！！！
-问真八字
+
 脚本名称:问真八字
 使用声明：️此脚本仅供学习与交流，
         请勿转载与贩卖！️️️
-群1077223830
+
 *******************************
 [rewrite_local]
-^http[s]?:\/\/bzpp2.iwzbz.com\/api\/v1.1\/user\/getpwnewios_v.+$ url script-response-body iwzbz.js
+^http[s]?:\/\/bzpp2.iwzbz.com\/api\/v1.1\/user\/getpwnewios_v.+$ url script-response-body https://github.com/Kongyveho/tux/blob/main/Bz.js
 [mitm] 
 hostname = *.iwzbz.*
 *******************************
